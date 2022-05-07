@@ -64,15 +64,15 @@ public class UserInputHandler {
                 String [] sizes = extractSizeAndUnit(userInput);
                 Unit unit = new Unit(Double.parseDouble(sizes[0]), sizes[1]);
 //                visszakapja az adatot méterben
-                double sizeInMeter = unit.getSizeInMeter();
+                unit.setSizeInMeter();
                 if (sizeData[i].equals("a oldal")) {
-                    shape.setA(sizeInMeter);
+                    shape.setA(unit.getSize());
                 } else if (sizeData[i].equals("b oldal")) {
-                    shape.setB(sizeInMeter);
+                    shape.setB(unit.getSize());
                 } else if (sizeData[i].equals("magasság")) {
-                    shape.setHeight(sizeInMeter);
+                    shape.setHeight(unit.getSize());
                 } else {
-                    shape.setWidth(sizeInMeter);
+                    shape.setWidth(unit.getSize());
                 }
             }
         } while (!shape.isParametersValid());
@@ -111,6 +111,7 @@ public class UserInputHandler {
 
 //    kiírja a terület és kerület adatokat
     public void printAreaAndPerimeter(Calculation shape) {
+        Unit area = shape.getArea();
         System.out.println("A " + shape.getName() + " területe " + shape.getArea() + " m2");
         System.out.println("A " + shape.getName() + " kerülete " + shape.getPerimeter() + " m");
     }

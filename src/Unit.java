@@ -8,16 +8,27 @@ public class Unit {
         this.unit = unit;
     }
 
-//    ez végzi az átváltást a mértékegységek között
-    public double getSizeInMeter() {
+    public double getSize() {
+        return size;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    //    ez végzi az átváltást a mértékegységek között
+    public void setSizeInMeter() {
         if (unit.equals("mm")) {
-            return size/1000;
+            size = size/1000;
+            unit = "m";
         } else if (unit.equals("cm")) {
-            return size/100;
+            size = size/100;
+            unit = "m";
         } else if (unit.equals("dm")) {
-            return size / 10;
+            size = size / 10;
+            unit = "m";
         } else {
-            return size;
+            unit = "m";
         }
     }
 
