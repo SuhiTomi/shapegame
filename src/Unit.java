@@ -19,21 +19,6 @@ public class Unit {
     }
 
     //    ez végzi az átváltást a mértékegységek között
-    public void setSizeInMeter() {
-        if (unit.equals("mm")) {
-            size = size/1000;
-            unit = "m";
-        } else if (unit.equals("cm")) {
-            size = size/100;
-            unit = "m";
-        } else if (unit.equals("dm")) {
-            size = size / 10;
-            unit = "m";
-        } else {
-            unit = "m";
-        }
-    }
-
     public void changeUnit(String newUnit) {
         String oldUnit = this.unit;
         this.unit = newUnit;
