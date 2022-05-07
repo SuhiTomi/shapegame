@@ -110,10 +110,11 @@ public class UserInputHandler {
     }
 
 //    kiírja a terület és kerület adatokat
-    public void printAreaAndPerimeter(Calculation shape) {
-        Unit area = shape.getArea();
-        System.out.println("A " + shape.getName() + " területe " + shape.getArea() + " m2");
-        System.out.println("A " + shape.getName() + " kerülete " + shape.getPerimeter() + " m");
+    public void printAreaAndPerimeter(Calculation shape, Unit area, Unit perimeter) {
+        System.out.println("------------------------------------------------------");
+        System.out.println("A " + shape.getName() + " területe " + area.getSize() + " " + area.getUnit());
+        System.out.println("A " + shape.getName() + " kerülete " + perimeter.getSize() + " " + perimeter.getUnit());
+        System.out.println("------------------------------------------------------");
     }
 
 //    visszaadja a mértékegységnél kiválasztott számot
@@ -123,12 +124,13 @@ public class UserInputHandler {
         System.out.println("1 - mm/mm2\n" +
                 "2 - cm/cm2\n" +
                 "3 - dm/dm2\n" +
+                "4 - m/m2\n" +
                 "0 - nem szeretnék más mértékegységet");
         String userInput = "";
         boolean correctUserData;
         do {
             userInput = scanner.nextLine();
-            correctUserData = validateUserInputInMenu(userInput, 0, 3);
+            correctUserData = validateUserInputInMenu(userInput, 0, 4);
         } while (correctUserData == false);
         return this.chosenNumber;
     }

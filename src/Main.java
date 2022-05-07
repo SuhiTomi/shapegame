@@ -29,15 +29,34 @@ public class Main {
 //        megadjuk a szükséges paramétereket a formához
             uih.addShapeData(shape);
 //        kiíratjuk a terület és kerület adatokat
-            uih.printAreaAndPerimeter(shape);
+            Unit area = new Unit(shape.getArea(), "m2");
+            Unit perimeter = new Unit(shape.getPerimeter(), "m");
+            uih.printAreaAndPerimeter(shape, area, perimeter);
 //        megkérdezzük a felhasználót, hogy szeretné-e másik mértékegységben látni az adatokat
-            userInput = uih.getDifferentUnitChosenNumber();
-            if (userInput != 0) {
+            while (true) {
+                userInput = uih.getDifferentUnitChosenNumber();
+                if (userInput == 0) {
+                    break;
+                }
                 switch (userInput) {
                     case 1:
+                        area.changeUnit("mm2");
+                        perimeter.changeUnit("mm");
+                        break;
                     case 2:
+                        area.changeUnit("cm2");
+                        perimeter.changeUnit("cm");
+                        break;
                     case 3:
+                        area.changeUnit("dm2");
+                        perimeter.changeUnit("dm");
+                        break;
+                    case 4:
+                        area.changeUnit("m2");
+                        perimeter.changeUnit("m");
+                        break;
                 }
+                uih.printAreaAndPerimeter(shape, area, perimeter);
             }
         }
     }
