@@ -95,7 +95,7 @@ public class UserInputHandler {
 
 //    validálja a beírt paramétert, az elfogadott formátum 123.456 m
     private boolean validateUserInputSize(String userInput) {
-        boolean isValid = userInput.matches("^[1-9] [mcd]?m$||^[1-9]\\d [mcd]?m$||^[1-9]\\d\\d [mcd]?m$||^[1-9]?\\d{1,2}\\.\\d{1,3} [mcd]?m$||[0]\\.\\d{1,3} [mcd]?m$");
+        boolean isValid = userInput.matches("^[1-9] [mcd]?m$||^[1-9]\\d [mcd]?m$||^[1-9]\\d\\d [mcd]?m$||^\\d[,\\.]\\d{1,3} [mcd]?m$||[0]^[1-9]\\d[,\\.]\\d{1,3} [mcd]?m$||^[1-9]\\d\\d[,\\.]\\d{1,3} [mcd]?m$||");
         if (!isValid) {
             System.out.println("Nem jó formátumot adtál meg. Kérlek próbáld meg újra!");
             return false;
