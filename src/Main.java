@@ -28,9 +28,9 @@ public class Main {
             shape.showParameterInformation();
 //        megadjuk a szükséges paramétereket a formához
             uih.addShapeData(shape);
-//        felvisszük a kiszámolt adatot Unit formátumban
-            Unit area = new Unit(shape.getArea(), "m2");
-            Unit perimeter = new Unit(shape.getPerimeter(), "m");
+//        felvisszük a kiszámolt adatot Parameter formátumban
+            Parameter area = new Parameter(shape.getArea(), "m2");
+            Parameter perimeter = new Parameter(shape.getPerimeter(), "m");
 //        kiíratjuk a terület és kerület adatokat
             uih.printAreaAndPerimeter(shape, area, perimeter);
 //        megkérdezzük a felhasználót, hogy szeretné-e másik mértékegységben látni az adatokat
