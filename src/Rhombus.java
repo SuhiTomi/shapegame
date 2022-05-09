@@ -23,7 +23,6 @@ public class Rhombus extends Deltoid {
 
     @Override
     public void getInformation() {
-        System.out.println("A rombuszt választottad. Itt egy oldalt és a két átlót kell (magasság, szélesség) \n" +
-                "a következő formátumban megadnod:");
+        System.out.println("A rombuszt választottad. Itt egy oldalt és az átlót kell a következő formátumban megadnod:");
     }
 }

@@ -28,7 +28,7 @@ public class Deltoid extends Rectangle {
                     "Kérlek add meg újra az adatokat!");
             return false;
         } else if (2*a <= width || 2*b <= width) {
-            System.out.println("A szélességnek kisebbnek kell lennie az egyik vagy a másik oldal kétszerese.\n" +
+            System.out.println("A szélességnek kisebbnek kell lennie a kisebb oldal kétszeresénél.\n" +
                     "Kérlek add meg újra az adatokat!");
             return false;
         } else {

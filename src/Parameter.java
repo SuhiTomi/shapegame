@@ -4,44 +4,19 @@ import java.util.Map;
 
 public class Parameter {
 
-    public double size;
-    public String unit;
-    public Map<String, Double> converter = new HashMap();
+    private double size;
+    private String unit;
+    private Map<String, Integer> converter = new HashMap();
 
     {
-        converter.put("mm->mm", 1e0);
-        converter.put("mm->cm", 1e-1);
-        converter.put("mm->dm", 1e-2);
-        converter.put("mm->m", 1e-3);
-        converter.put("cm->mm", 1e1);
-        converter.put("cm->cm", 1e0);
-        converter.put("cm->dm", 1e-1);
-        converter.put("cm->m", 1e-2);
-        converter.put("dm->mm", 1e2);
-        converter.put("dm->cm", 1e1);
-        converter.put("dm->dm", 1e0);
-        converter.put("dm->m", 1e-1);
-        converter.put("m->mm", 1e3);
-        converter.put("m->cm", 1e2);
-        converter.put("m->dm", 1e1);
-        converter.put("m->m", 1e0);
-
-        converter.put("mm2->mm2", 1e0);
-        converter.put("mm2->cm2", 1e-2);
-        converter.put("mm2->dm2", 1e-4);
-        converter.put("mm2->m2", 1e-6);
-        converter.put("cm2->mm2", 1e2);
-        converter.put("cm2->cm2", 1e0);
-        converter.put("cm2->dm2", 1e-2);
-        converter.put("cm2->m2", 1e-4);
-        converter.put("dm2->mm2", 1e4);
-        converter.put("dm2->cm2", 1e2);
-        converter.put("dm2->dm2", 1e0);
-        converter.put("dm2->m2", 1e-2);
-        converter.put("m2->mm2", 1e6);
-        converter.put("m2->cm2", 1e4);
-        converter.put("m2->dm2", 1e2);
-        converter.put("m2->m2", 1e0);
+        converter.put("mm", 1_000);
+        converter.put("cm", 100);
+        converter.put("dm", 10);
+        converter.put("m", 1);
+        converter.put("mm2", 1_000_000);
+        converter.put("cm2", 10_000);
+        converter.put("dm2", 100);
+        converter.put("m2", 1);
     }
 
     public Parameter(double size, String unit) {
@@ -61,8 +36,7 @@ public class Parameter {
     public void changeUnit(String newUnit) {
         String oldUnit = this.unit;
         this.unit = newUnit;
-        double multiplier = converter.get(oldUnit + "->" + newUnit);
-        size = size * multiplier;
+        size = size / converter.get(oldUnit) * converter.get(newUnit);
     }
 
 }

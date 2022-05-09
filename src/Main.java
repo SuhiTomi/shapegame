@@ -57,6 +57,7 @@ public class Main {
                         perimeter.changeUnit("m");
                         break;
                 }
+//                kiíratjuk a terület és kerület adatokat
                 uih.printAreaAndPerimeter(shape, area, perimeter);
             }
         }

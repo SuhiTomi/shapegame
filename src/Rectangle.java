@@ -52,9 +52,11 @@ public class Rectangle implements Calculation {
 
     @Override
     public void showParameterInformation() {
+        System.out.println("-----");
         System.out.println("Max. 3 számjegy lehet az egész része, valamint ugyanúgy 3 számjegy a tört része\n" +
-                "majd szóköz és a mértékegység, ami csak 'mm', 'cm', 'dm' vagy 'm' lehet (a tizedes választó pont nem vessző) \n" +
-                "pl. 101.325 m, 1 cm, 15.4 dm, stb.");
+                "majd szóköz és a mértékegység, ami csak 'mm', 'cm', 'dm' vagy 'm' lehet \n" +
+                "pl. 101.325 m, 1 cm, 15,4 dm, stb.");
+        System.out.println("-----");
     }
 
     @Override

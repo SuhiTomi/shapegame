@@ -46,7 +46,7 @@ public class UserInputHandler {
         }
     }
 
-//    ez viszi be a paramétereket a kiválasztott forma példányába
+    //    ez viszi be a paramétereket a kiválasztott forma példányába
     public void addShapeData(Calculation shape) {
         String[] sizeData = shape.getSizeData();
 //        a külső do while addig fut, amíg a beírt adatok érvényesek lesznek az adott formára vonatkozóan
@@ -59,7 +59,7 @@ public class UserInputHandler {
                 boolean correctUserData = false;
                 do {
                     userInput = scanner.nextLine();
-                    correctUserData = validateUserInputSize(userInput);
+                    correctUserData = validateUserInputParameter(userInput);
                 } while (correctUserData == false);
                 String [] sizes = extractSizeAndUnit(userInput);
                 Parameter parameter = new Parameter(Double.parseDouble(sizes[0].replace(",", ".")), sizes[1]);
@@ -94,7 +94,7 @@ public class UserInputHandler {
     }
 
 //    validálja a beírt paramétert, az elfogadott formátum 123.456 m
-    private boolean validateUserInputSize(String userInput) {
+    private boolean validateUserInputParameter(String userInput) {
         boolean isValid = userInput.matches("^[1-9] [mcd]?m$||^[1-9]\\d [mcd]?m$||^[1-9]\\d\\d [mcd]?m$||^\\d[,\\.]\\d{1,3} [mcd]?m$||[0]^[1-9]\\d[,\\.]\\d{1,3} [mcd]?m$||^[1-9]\\d\\d[,\\.]\\d{1,3} [mcd]?m$||");
         if (!isValid) {
             System.out.println("Nem jó formátumot adtál meg. Kérlek próbáld meg újra!");
@@ -112,8 +112,8 @@ public class UserInputHandler {
 //    kiírja a terület és kerület adatokat
     public void printAreaAndPerimeter(Calculation shape, Parameter area, Parameter perimeter) {
         System.out.println("------------------------------------------------------");
-        System.out.println("A " + shape.getName() + " területe " + String.format("%.3f", area.getSize()) + " " + area.getUnit());
-        System.out.println("A " + shape.getName() + " kerülete " + String.format("%.3f", perimeter.getSize()) + " " + perimeter.getUnit());
+        System.out.println("A " + shape.getName() + " területe " + String.format("%.5f", area.getSize()) + " " + area.getUnit());
+        System.out.println("A " + shape.getName() + " kerülete " + String.format("%.5f", perimeter.getSize()) + " " + perimeter.getUnit());
         System.out.println("------------------------------------------------------");
     }
 
