@@ -25,4 +25,5 @@ public class Rhombus extends Deltoid {
     public void getInformation() {
         System.out.println("A rombuszt választottad. Itt egy oldalt és az átlót kell a következő formátumban megadnod:");
     }
+
 }

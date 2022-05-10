@@ -46,7 +46,7 @@ public class UserInputHandler {
         }
     }
 
-    //    ez viszi be a paramétereket a kiválasztott forma példányába
+//    ez viszi be a paramétereket a kiválasztott forma példányába
     public void addShapeData(Calculation shape) {
         String[] sizeData = shape.getSizeData();
 //        a külső do while addig fut, amíg a beírt adatok érvényesek lesznek az adott formára vonatkozóan
@@ -93,7 +93,7 @@ public class UserInputHandler {
         return true;
     }
 
-//    validálja a beírt paramétert, az elfogadott formátum 123.456 m
+//    validálja a beírt paramétert, az elfogadott formátum 123.456 m (vagyis max. 3 karakter, egészrész és 3 karakter törtrész)
     private boolean validateUserInputParameter(String userInput) {
         boolean isValid = userInput.matches("^[1-9] [mcd]?m$||^[1-9]\\d [mcd]?m$||^[1-9]\\d\\d [mcd]?m$||^\\d[,\\.]\\d{1,3} [mcd]?m$||[0]^[1-9]\\d[,\\.]\\d{1,3} [mcd]?m$||^[1-9]\\d\\d[,\\.]\\d{1,3} [mcd]?m$||");
         if (!isValid) {
@@ -117,7 +117,7 @@ public class UserInputHandler {
         System.out.println("------------------------------------------------------");
     }
 
-//    visszaadja a mértékegységnél kiválasztott számot
+//    visszaadja a mértékegység választásnál a kiválasztott számot
     public int getDifferentUnitChosenNumber() {
         System.out.println();
         System.out.println("Milyen más mértékegységben szeretnéd még látni az eredményt?");
