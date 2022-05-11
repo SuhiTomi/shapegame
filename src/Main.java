@@ -39,24 +39,7 @@ public class Main {
                 if (userInput == 0) {
                     break;
                 }
-                switch (userInput) {
-                    case 1:
-                        area.changeUnit("mm2");
-                        perimeter.changeUnit("mm");
-                        break;
-                    case 2:
-                        area.changeUnit("cm2");
-                        perimeter.changeUnit("cm");
-                        break;
-                    case 3:
-                        area.changeUnit("dm2");
-                        perimeter.changeUnit("dm");
-                        break;
-                    case 4:
-                        area.changeUnit("m2");
-                        perimeter.changeUnit("m");
-                        break;
-                }
+                uih.setChangeUnit(userInput, area, perimeter);
 //                kiíratjuk a terület és kerület adatokat
                 uih.printAreaAndPerimeter(shape, area, perimeter);
             }
